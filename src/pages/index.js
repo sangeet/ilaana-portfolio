@@ -1,14 +1,15 @@
 import React from "react"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
-    <Layout>
+    <Layout isHome={true}>
       <SEO title="Home" />
       <IntroBar />
-      <Photo />
+      <Photo data={data.photo} />
     </Layout>
   )
 }
@@ -16,31 +17,35 @@ const IndexPage = () => {
 const IntroBar = () => {
   const social = [
     {
-      title: "Linkedin",
-      href: "/",
+      title: "Twitter",
+      href: "https://twitter.com/IlaanaChakma",
     },
     {
-      title: "Twitter",
-      href: "/",
+      title: "LinkedIN",
+      href: "https://www.linkedin.com/in/ilaana-chakma",
+    },
+    {
+      title: "Quora",
+      href: "https://www.quora.com/profile/Ilaana-Chakma",
     },
     {
       title: "Instagram",
-      href: "/",
-    },
+      href: "https://www.instagram.com/ilaana.chakma/",
+    }
   ]
   return (
-    <section className="w-1/4 flex flex-col justify-center px-12">
+    <section className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col justify-center px-12 py-20">
       <span className="text-2xl pb-10">Hello. My name is</span>
-      <h1 className="text-6xl font-bold leading-none text-red-500">
+      <h1 className="text-4xl md:text-5xl font-bold leading-none text-red-500">
         Ilaana Chakma
       </h1>
       <p className="text-lg text-red-500 pt-10">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt sit,
         delectus dolor dolore labore et saepe minus? Eligendi obcaecati eveniet
       </p>
-      <div className="flex w-full text-gray-700 pt-20">
+      <div className="flex flex-wrap w-full text-gray-700 pt-20">
         {social.map(socialLink => (
-          <a href={socialLink.href} className="uppercase pr-10">
+          <a href={socialLink.href} className="uppercase pr-10 mb-3" target="_blank">
             {socialLink.title}
           </a>
         ))}
@@ -49,16 +54,24 @@ const IntroBar = () => {
   )
 }
 
-const Photo = () => {
+const Photo = ({ data }) => {
   return (
-    <div className="w-2/4 h-screen bg-blue-500">
-      <img
-        src="https://via.placeholder.com/1920x1080"
-        alt=""
-        className="h-full w-full object-cover"
-      />
+    <div className="hidden lg:block lg:w-1/3 xl:w-2/4 h-screen">
+      <Img fluid={data.childImageSharp.fluid} className="h-full w-full" />
     </div>
   )
 }
+
+export const PageQuery = graphql`
+  {
+    photo: file(relativePath: { eq: "full2.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
