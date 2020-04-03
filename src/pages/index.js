@@ -71,7 +71,7 @@ export const PageQuery = graphql`
   {
     photo: file(relativePath: { eq: "full2.jpg" }) {
       childImageSharp {
-        fluid {
+        fluid(quality:90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
