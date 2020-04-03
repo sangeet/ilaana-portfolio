@@ -13,7 +13,6 @@ const IndexPage = () => {
   )
 }
 
-
 const IntroBar = () => {
   const social = [
     {

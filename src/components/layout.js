@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
+import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -39,7 +39,7 @@ const Sidebar = () => {
   const links = [
     {
       title: "Music",
-      href: "/radio-show",
+      href: "/music",
     },
     {
       title: "Videos",
@@ -52,6 +52,10 @@ const Sidebar = () => {
     {
       title: "Radio Show",
       href: "/radio-show",
+    },
+    {
+      title: "Resume",
+      href: "/resume",
     },
   ]
 
@@ -78,8 +82,8 @@ const Sidebar = () => {
       <div className="h-half bg-red-500 text-white">
         <ul className="font-bold flex flex-col px-20 justify-center h-full">
           {links.map(link => (
-            <li className="text-4xl">
-              <a href={link.href}>{link.title}</a>
+            <li className="text-4xl my-1">
+              <Link to={link.href} activeClassName="border-b-4 border-white pb-1">{link.title}</Link>
             </li>
           ))}
         </ul>
@@ -98,10 +102,6 @@ const Sidebar = () => {
       </div>
     </section>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
