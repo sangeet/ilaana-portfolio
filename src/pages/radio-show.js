@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 const RadioShowPage = () => {
   return (
     <Layout>
-      <div className="flex flex-wrap w-3/4 p-10 -mx-5">
+      <div className="flex flex-wrap w-3/4 p-10 -mx-5 h-screen overflow-y-scroll">
         {[1, 2, 3, 4, 5, 6, 7, 8].map(audio => (
           <AudioItem />
         ))}
