@@ -9,7 +9,7 @@ const RadioShowPage = ({ data }) => {
     {
       title: "Radio Show",
       href: data.radio1.publicURL,
-      description: `Radio show scriped, edited and voiceovered by me as part of a project at Mount Carmel College under the paper titled "Writing for radio"`,
+      description: `Radio show scriped, edited and voiceovered by me as part of a project at Mount Carmel College under the paper titled 'Writing for Radio'`,
     },
     {
       title: "Folk Ad - Ramayan",
