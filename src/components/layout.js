@@ -108,6 +108,7 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
               <Link
                 to={link.href}
                 activeClassName="border-b-2 border-gray-700 pb-1"
+                className="border-b-2 border-transparent hover:border-gray-400"
               >
                 {link.title}
               </Link>
@@ -117,6 +118,7 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
               <a
                 href={resumeLink}
                 activeClassName="border-b-2 border-gray-700 pb-1"
+                className="border-b-2 border-transparent hover:border-gray-400"
                 target="_blank"
               >
                 Resume
