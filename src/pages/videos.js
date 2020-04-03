@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const VideoPage = () => {
   const videos = [
@@ -57,6 +58,7 @@ const VideoPage = () => {
   )
   return (
     <Layout>
+      <SEO title="Videos" />
       <div className="w-full md:w-2/3 xl:w-3/4 h-screen md:h-auto md:overflow-y-auto flex flex-col">
         <div className="bg-white text-white w-full py-5 px-10 border-b">
           {categories.map((category, index) => (

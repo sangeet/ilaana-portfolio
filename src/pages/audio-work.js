@@ -1,5 +1,6 @@
 import React from "react"
 import testMp3 from "../audio/test.mp3"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 const RadioShowPage = ({ data }) => {
@@ -18,6 +19,7 @@ const RadioShowPage = ({ data }) => {
   ]
   return (
     <Layout>
+      <SEO title="Audio Work" />
       <div className="flex flex-wrap w-full md:w-2/3 xl:w-3/4 p-10 md:-mx-5 h-screen md:overflow-y-auto">
         {audioItems.map(audio => (
           <AudioItem data={audio} />

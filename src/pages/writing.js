@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Writing = ({ data }) => {
   const directories = ["Articles", "Poetry", "Projects"]
@@ -10,6 +11,7 @@ const Writing = ({ data }) => {
   console.log(files)
   return (
     <Layout>
+      <SEO title="Writing" />
       <div className="lg:w-2/3 xl:w-3/4 flex flex-wrap h-screen md:overflow-y-auto lg:overflow-y-visible">
         {directories.map(directory => (
           <SubSection
