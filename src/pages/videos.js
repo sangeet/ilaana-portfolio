@@ -38,7 +38,7 @@ const VideoPage = () => {
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap p-10 -mx-5 max-h-screen overflow-y-scroll">
+        <div className="flex flex-wrap p-10 -mx-5 max-h-screen overflow-y-auto">
           {filteredVideos.map(video => (
             <VideoItem />
           ))}
