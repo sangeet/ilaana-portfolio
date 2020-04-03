@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Tailwind PurgeCSS starter`,
-    description: `An opiniated starter pack for Gatsby pre-configured with TailwindCSS, PurgeCSS and FontAwesome`,
+    title: `Ilaana Chakma`,
+    description: `A student at Indian Institute of Mass Communication pursuing Advertising and Public Relations. Interested in sub-altern perspectives in culture studies, psychology and research. Experienced professional in Internal Communications.`,
     author: `@gatsbyjs`,
   },
   plugins: [
