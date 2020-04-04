@@ -24,7 +24,7 @@ const Thumbs = ({ images }) => {
     <section className="flex flex-wrap justify-center relative">
       {images.map((image, index) => (
         <div
-          className="w-full lg:w-1/2 xl:w-1/3 px-2 mb-3"
+          className="w-full lg:w-1/2 xl:w-1/3 px-2 mb-3 cursor-pointer hover:shadow-md"
           onClick={() => {
             setPopupOpen(true)
             setCurrentImage(index)
