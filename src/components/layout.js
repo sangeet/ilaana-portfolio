@@ -61,6 +61,10 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
       href: "/writing",
     },
     {
+      title: "Poetry",
+      href: "/poetry",
+    },
+    {
       title: "Videos",
       href: "/videos",
     },
@@ -81,7 +85,12 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
     },
     {
       title: "email",
-      text: "ilaana.chakma@gmail.com",
+      text: (
+        <>
+          <span>ilaana.chakma</span>
+          <span>@gmail.com</span>
+        </>
+      ),
     },
     {
       title: "phone",
@@ -90,23 +99,23 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
   ]
   return (
     <section className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col">
-      <div className="py-20 md:h-half bg-pink-100 text-gray-700 relative w-full">
+      <div className="md:h-half bg-pink-100 text-gray-700 relative w-full">
         <a href="/">
-          {/* <div className="absolute left-0 right-0 bottom-0 -mb-16 lg:-mb-20 flex justify-center"> */}
-          {/*   <Img */}
-          {/*     fluid={data.childImageSharp.fluid} */}
-          {/*     className="rounded-full w-32 h-32 lg:h-40 lg:w-40 border-4 border-gray-400 " */}
-          {/*   /> */}
-          {/* </div> */}
+          <div className="absolute left-0 right-0 bottom-0 -mb-16 lg:-mb-20 flex sidebar-image-container">
+            <Img
+              fluid={data.childImageSharp.fluid}
+              className="rounded-full border-4 border-gray-400 sidebar-image"
+            />
+          </div>
           {/* <img */}
           {/*   src="https://via.placeholder.com/200" */}
           {/*   alt="" */}
           {/*   className="absolute left-0 bottom-0 rounded-full h-40 w-40 border-4 border-gray-400 -mb-20 ml-20" */}
           {/* /> */}
         </a>
-        <ul className="font-bold flex flex-col px-20 justify-center h-full items-center md:items-start">
+        <ul className="font-bold flex flex-col py-10 pb-32 md:py-10 px-10 xl:px-20 h-full justify-center items-center md:items-start">
           {links.map(link => (
-            <li className="text-2xl my-2 xl:my-1">
+            <li className="my-2 xl:my-1 link-item xl:text-xl">
               <Link
                 to={link.href}
                 activeClassName="border-b-2 border-gray-700 pb-1"
@@ -116,7 +125,7 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
               </Link>
             </li>
           ))}
-          <li className="text-2xl my-2 xl:my-1">
+          <li className="my-2 xl:my-1 link-item xl:text-xl">
             <a
               href={resumeLink}
               activeClassName="border-b-2 border-gray-700 pb-1"
@@ -128,14 +137,14 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
           </li>
         </ul>
       </div>
-      <div className="py-20 md:h-half bg-gray-200 text-gray-700">
-        <ul className="font-bold flex flex-col px-20 justify-center h-full items-center text-center md:items-start md:text-left">
+      <div className="md:h-half bg-gray-200 text-gray-700">
+        <ul className="font-bold flex flex-col px-10 xl:px-20 pt-24 md:pt-20 pb-10 justify-center h-full items-center text-center md:items-start md:text-left">
           {info.map(infoItem => (
-            <li className="flex flex-col mb-5">
-              <span className="uppercase text-red-500 text-sm">
+            <li className="flex flex-col mb-3 md:w-full">
+              <span className="uppercase text-red-500 text-xs">
                 {infoItem.title}
               </span>
-              <span>{infoItem.text}</span>
+              <span className="flex flex-wrap">{infoItem.text}</span>
             </li>
           ))}
         </ul>

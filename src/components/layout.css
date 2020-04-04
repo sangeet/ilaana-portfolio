@@ -1,0 +1,45 @@
+.link-item {
+  @apply text-lg;
+}
+
+.sidebar-image {
+  @apply w-32 h-32;
+}
+
+.sidebar-image-container {
+  @apply justify-center;
+}
+
+.infotext-heading {
+  @apply text-xs;
+}
+
+.infotext-text {
+  @apply text-xs;
+}
+
+@media (min-height: 800px) {
+  .link-item {
+    @apply text-xl;
+  }
+  .sidebar-image {
+    @apply h-40 w-40;
+  }
+  .sidebar-image-container {
+    @apply justify-center;
+  }
+
+  .infotext-text {
+    @apply text-base;
+  }
+}
+
+.carousel-button {
+    @apply w-8 h-8 rounded-full text-white bg-black-50;
+}
+
+@screen lg{
+    .carousel-button {
+        @apply w-10 h-10;
+    }
+}
