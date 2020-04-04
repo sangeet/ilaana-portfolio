@@ -101,12 +101,14 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
     <section className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col">
       <div className="md:h-half bg-pink-100 text-gray-700 relative w-full">
         <a href="/">
-          <div className="absolute left-0 right-0 bottom-0 -mb-16 lg:-mb-20 flex sidebar-image-container">
-            <Img
-              fluid={data.childImageSharp.fluid}
-              className="rounded-full border-4 border-gray-400 sidebar-image"
-            />
-          </div>
+          {!isHome && (
+            <div className="absolute left-0 right-0 bottom-0 -mb-16 lg:-mb-20 flex sidebar-image-container">
+              <Img
+                fluid={data.childImageSharp.fluid}
+                className="rounded-full border-4 border-gray-400 sidebar-image"
+              />
+            </div>
+          )}
           {/* <img */}
           {/*   src="https://via.placeholder.com/200" */}
           {/*   alt="" */}
