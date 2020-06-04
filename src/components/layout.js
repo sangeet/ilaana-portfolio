@@ -129,16 +129,16 @@ const Sidebar = ({ data, isHome, resumeLink }) => {
               </Link>
             </li>
           ))}
-          <li className="my-2 xl:my-1 link-item xl:text-xl">
-            <a
-              href={resumeLink}
-              activeClassName="border-b-2 border-gray-700 pb-1"
-              className="border-b-2 border-transparent hover:border-gray-400"
-              target="_blank"
-            >
-              Resume
-            </a>
-          </li>
+          {/* <li className="my-2 xl:my-1 link-item xl:text-xl"> */}
+          {/*   <a */}
+          {/*     href={resumeLink} */}
+          {/*     activeClassName="border-b-2 border-gray-700 pb-1" */}
+          {/*     className="border-b-2 border-transparent hover:border-gray-400" */}
+          {/*     target="_blank" */}
+          {/*   > */}
+          {/*     Resume */}
+          {/*   </a> */}
+          {/* </li> */}
         </ul>
       </div>
       <div className="md:h-half bg-gray-200 text-gray-700">
